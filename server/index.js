@@ -16,6 +16,7 @@ const io = new Server(server, {
 
 // Sockets
 const encuestaRoutes = require('./routes/encuestaRoutes')(io);
+const utilidadesRoutes = require('./routes/utilidadesRouter');
 const configurarSockets = require('./sockets/encuestaSocket');
 
 // Middlewares
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/encuestas', encuestaRoutes);
+app.use('/api/utilidades', utilidadesRoutes);
 
 // Sockets
 configurarSockets(io);
